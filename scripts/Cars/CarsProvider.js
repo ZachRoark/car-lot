@@ -1,5 +1,4 @@
-const carsUrl =
-  "https://gist.githubusercontent.com/AdamSheaffer/fe50daf69c713eeb1a83edc2525a4643/raw/3d84acd63a40582c12f47885106071c0ffee6e83/cars.json";
+const carsUrl = "https://gist.githubusercontent.com/AdamSheaffer/fe50daf69c713eeb1a83edc2525a4643/raw/3d84acd63a40582c12f47885106071c0ffee6e83/cars.json";
 
 let cars = [];
 
@@ -8,11 +7,11 @@ export const useCars = () => {
 };
 
 export const getCars = () => {
-  return fetch("https://gist.githubusercontent.com/AdamSheaffer/fe50daf69c713eeb1a83edc2525a4643/raw/3d84acd63a40582c12f47885106071c0ffee6e83/cars.json")
+  return fetch(carsUrl)
     .then(response => response.json())
-    .then(parsedCars => {
-      console.log("test1")
-      console.table(parsedCars);
+    .then((parsedCars) => {
+      // console.table(parsedCars);
       cars = parsedCars
-    })
+    }
+    )
 };
